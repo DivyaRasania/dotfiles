@@ -1,0 +1,24 @@
+[general]
+	live_config_reload = true
+	# mkdir -p ~/.config/alacritty/themes
+	# git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+	import = [
+		"~/.config/alacritty/themes/themes/alabaster_dark.toml"
+	]
+
+[window]
+	opacity = 0.8
+  padding.x = 10
+  padding.y = 10
+
+[font]
+	normal = { family = "Fira Code Nerdfont", style = "Regular" }
+	bold = { style = "Bold" }
+	italic = { style = "Italic" }
+	bold_italic = { style = "Bold Italic" }
+
+[selection]
+	save_to_clipboard = true
+
+[terminal]
+	shell = "/usr/bin/fish"
