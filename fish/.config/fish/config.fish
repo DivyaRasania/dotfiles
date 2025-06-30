@@ -10,3 +10,4 @@ if status is-interactive
     alias edit-rc='$EDITOR ~/.config/fish/config.fish; source ~/.config/fish/config.fish'
 end
 /home/div/.local/bin/mise activate fish | source
+fish_ssh_agent
