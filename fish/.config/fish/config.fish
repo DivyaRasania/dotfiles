@@ -11,6 +11,3 @@ if status is-interactive
 end
 
 /home/div/.local/bin/mise activate fish | source
-
-fish_ssh_agent
-ssh-add ~/.ssh/gh-main
