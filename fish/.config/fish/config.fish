@@ -11,3 +11,4 @@ if status is-interactive
 end
 
 /home/div/.local/bin/mise activate fish | source
+zoxide init --cmd cd fish | source
