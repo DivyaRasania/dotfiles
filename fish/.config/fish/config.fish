@@ -5,10 +5,6 @@ if status is-interactive
     export EDITOR='nvim'
     export VISUAL=$EDITOR
 
-    # ---INSTALLERS---
-    # vencord: `sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"`
-    # catppuccin-kde: `git clone --depth=1 https://github.com/catppuccin/kde catppuccin-kde && cd catppuccin-kde`
-
     # ---ALIAS---
     alias ll='ls -alF'
     alias la='ls -A'
