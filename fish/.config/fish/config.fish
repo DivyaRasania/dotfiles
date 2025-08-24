@@ -3,6 +3,7 @@ set fish_greeting
 fish_add_path ~/.local/bin
 mise activate fish | source
 zoxide init --cmd cd fish | source
+fish_ssh_agent
 
 if status is-interactive
     # ---EXPORTS---
