@@ -10,11 +10,11 @@ fish_ssh_agent
 
 if status is-interactive
     # ---EXPORTS---
-    set -Ux VISUAL "nvim"
+    set -Ux VISUAL nvim
     set -Ux EDITOR "$VISUAL"
 
-
     # ---ALIAS---
+    abbr -a ls "eza --color=always --group-directories-first --icons" # preferred listing
     abbr -a l "eza --color=always --group-directories-first --icons" # preferred listing
     abbr -a la "eza -a --color=always --group-directories-first --icons" # all files and dirs
     abbr -a ll "eza -la --color=always --group-directories-first --icons" # long format
