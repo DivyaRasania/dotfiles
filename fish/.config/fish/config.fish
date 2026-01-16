@@ -14,15 +14,15 @@ if status is-interactive
     set -Ux EDITOR "$VISUAL"
 
     # ---ALIAS---
-    abbr -a ls "eza --color=always --group-directories-first --icons" # preferred listing
-    abbr -a l "eza --color=always --group-directories-first --icons" # preferred listing
-    abbr -a la "eza -a --color=always --group-directories-first --icons" # all files and dirs
-    abbr -a ll "eza -la --color=always --group-directories-first --icons" # long format
-    abbr -a lt "eza -aT --color=always --group-directories-first --icons" # tree listing
-    abbr -a l. "eza -a | grep -e '^\.'" # show only dotfiles
-    abbr -a cat "bat --theme zenburn"
-    abbr -a tarnow "tar -acf "
-    abbr -a untar "tar -zxvf "
-    abbr -a grep "grep --color=auto"
-    abbr -a edit-rc "$EDITOR ~/.config/fish/config.fish; source ~/.config/fish/config.fish"
+    alias ls="eza --color=always --group-directories-first --icons" # preferred listing
+    alias l="eza --color=always --group-directories-first --icons" # preferred listing
+    alias la="eza -a --color=always --group-directories-first --icons" # all files and dirs
+    alias ll="eza -la --color=always --group-directories-first --icons" # long format
+    alias lt="eza -aT --color=always --group-directories-first --icons" # tree listing
+    alias l.="eza -a | grep -e '^\.'" # show only dotfiles
+    alias cat="bat"
+    alias tarnow="tar -acf "
+    alias untar="tar -zxvf "
+    alias grep="grep --color=auto"
+    alias edit-rc="$EDITOR ~/.config/fish/config.fish; source ~/.config/fish/config.fish"
 end
