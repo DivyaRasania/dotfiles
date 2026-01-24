@@ -25,4 +25,7 @@ if status is-interactive
     alias untar="tar -zxvf "
     alias grep="grep --color=auto"
     alias edit-rc="$EDITOR ~/.config/fish/config.fish; source ~/.config/fish/config.fish"
+
+    # for college
+    alias gcc_strict99='gcc -std=c99 -pedantic -Wall -Wextra -Werror'
 end
