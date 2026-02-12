@@ -1,8 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:nvim
-SETUVAR --export VISUAL:nvim
-SETUVAR __fish_initialized:3800
+SETUVAR --export EDITOR:micro
+SETUVAR --export VISUAL:micro
+SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2d\x2dreverse
 SETUVAR fish_color_command:normal

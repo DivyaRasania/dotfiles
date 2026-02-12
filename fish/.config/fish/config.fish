@@ -10,7 +10,7 @@ fish_ssh_agent
 
 if status is-interactive
     # ---EXPORTS---
-    set -Ux VISUAL nvim
+    set -Ux VISUAL micro
     set -Ux EDITOR "$VISUAL"
 
     # ---ALIAS---
@@ -20,7 +20,7 @@ if status is-interactive
     alias ll="eza -la --color=always --group-directories-first --icons" # long format
     alias lt="eza -aT --color=always --group-directories-first --icons" # tree listing
     alias l.="eza -a | grep -e '^\.'" # show only dotfiles
-    alias cat="bat"
+    alias cat="batcat"
     alias tarnow="tar -acf "
     alias untar="tar -zxvf "
     alias grep="grep --color=auto"
