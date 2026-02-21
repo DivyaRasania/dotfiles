@@ -3,10 +3,15 @@ set fish_greeting
 
 fish_add_path ~/.local/bin
 
-# mise activate fish | source
+mise activate fish | source
 zoxide init --cmd cd fish | source
 
 fish_ssh_agent
+
+# Source Nix daemon for Fish
+if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+    source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+end
 
 if status is-interactive
     # ---EXPORTS---
