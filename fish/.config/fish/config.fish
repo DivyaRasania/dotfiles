@@ -25,10 +25,17 @@ if status is-interactive
     alias ll="eza -la --color=always --group-directories-first --icons" # long format
     alias lt="eza -aT --color=always --group-directories-first --icons" # tree listing
     alias l.="eza -a | grep -e '^\.'" # show only dotfiles
-    alias cat="batcat"
+    
+    if command -q apt
+        alias cat="batcat"
+    else
+        alias cat="bat"
+    end
+
     alias tarnow="tar -acf "
     alias untar="tar -zxvf "
     alias grep="grep --color=auto"
+    
     alias edit-rc="$EDITOR ~/.config/fish/config.fish; source ~/.config/fish/config.fish"
 
     # for college
