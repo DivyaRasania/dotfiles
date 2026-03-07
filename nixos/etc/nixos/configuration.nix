@@ -5,10 +5,12 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
-    ];
+  imports = [ 
+    <home-manager/nixos>
+    /etc/nixos/hardware-configuration.nix
+  ];
+
+  home-manager.users.div = import /home/div/.config/home-manager/home.nix;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -99,64 +101,22 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Enable fish shell
   programs.fish.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.div = {
     isNormalUser = true;
     description = "Divya Rasania";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.fish;
-    packages = with pkgs; [];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget
-    bat
-    btop
-    docker
-    docker-compose
-    eza
-    fastfetch
-    fzf
-    libgcc
-    gdb
-    git
-    gh
-    micro
-    mise
-    openssh
-    stow
-    gnutar
-    tldr
-    unzip
-    zoxide
-
-    gnome-tweaks
-    
-    brave
-    kitty
-    vlc
-    vscode
-    discord
-  ];
-
   # Custom fonts
-  fonts.packages = with pkgs; [
-  	jetbrains-mono
-  ];
-  
-  # For flatpak
+  fonts.packages = with pkgs; [ jetbrains-mono ];
   fonts.fontDir.enable = true;
-
-  # Autoupdate icon cache on rebuild
   gtk.iconCache.enable = true;
+
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -165,11 +125,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
