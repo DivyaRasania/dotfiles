@@ -9,11 +9,6 @@ zoxide init --cmd cd fish | source
 
 fish_ssh_agent
 
-# Source Nix daemon for Fish
-if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
-    source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
-end
-
 if status is-interactive
     # ---EXPORTS---
     set -Ux VISUAL micro
@@ -25,7 +20,7 @@ if status is-interactive
     alias la="eza -a --color=always --group-directories-first --icons" # all files and dirs
     alias ll="eza -la --color=always --group-directories-first --icons" # long format
     alias lt="eza -aT --color=always --group-directories-first --icons" # tree listing
-    alias l.="eza -a | grep -e '^\.'" # show only dotfiles
+    alias l.="eza -a | rg -e '^\.'" # show only dotfiles
     
     if command -q apt
         alias cat="batcat"
@@ -35,10 +30,7 @@ if status is-interactive
 
     alias tarnow="tar -acf "
     alias untar="tar -zxvf "
-    alias grep="grep --color=auto"
+    alias grep="rg --color=auto"
     
     alias edit-rc="$EDITOR ~/.config/fish/config.fish; source ~/.config/fish/config.fish"
-
-    # for college
-    alias gcc_strict99='gcc -std=c99 -pedantic -Wall -Wextra -Werror'
 end
