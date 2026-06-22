@@ -13,6 +13,8 @@ if status is-interactive
     # ---EXPORTS---
     set -Ux VISUAL micro
     set -Ux EDITOR "$VISUAL"
+    # Set default BROWSER variable to windows default for WSL
+    set -gx BROWSER /mnt/c/Windows/explorer.exe
 
     # ---ALIAS---
     alias ls="eza --color=always --group-directories-first --icons"     # preferred listing
