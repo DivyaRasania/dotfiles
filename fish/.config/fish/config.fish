@@ -13,7 +13,9 @@ if status is-interactive
     # ---EXPORTS---
     set -Ux VISUAL micro
     set -Ux EDITOR "$VISUAL"
-    # Set default BROWSER variable to windows default for WSL
+    
+    # WSL specifics
+    set -Ux OLLAMA_HOST http://(ip route show default | awk '{print $3}'):11434
     set -gx BROWSER /mnt/c/Windows/explorer.exe
 
     # ---ALIAS---
