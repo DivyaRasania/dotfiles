@@ -2,12 +2,12 @@
 set -e
 
 install_debian() {
-    PACKAGES="bat btop curl extrepo eza gh micro openssh-server pipx ripgrep stow tmux tree tar unzip wget zoxide"
+    PACKAGES="bat btop curl extrepo eza gh micro neovim openssh-server pipx ripgrep tmux tree tar unzip wget zoxide"
     sudo apt update && sudo apt install -y $PACKAGES
 }
 
 install_fedora() {
-    PACKAGES="bat btop curl eza gh micro openssh-server pipx ripgrep stow tmux tree tar unzip wget zoxide"
+    PACKAGES="bat btop curl eza gh micro neovim openssh-server pipx ripgrep tmux tree tar unzip wget zoxide"
     sudo dnf install -y $PACKAGES
     # eza via copr if not available
     if ! command -v eza &>/dev/null; then
@@ -17,7 +17,7 @@ install_fedora() {
 }
 
 install_arch() {
-    PACKAGES="bat btop curl eza github-cli micro openssh python-pipx ripgrep stow tmux tree tar unzip wget zoxide"
+    PACKAGES="bat btop curl eza github-cli micro neovim openssh python-pipx ripgrep tmux tree tar unzip wget zoxide"
     sudo pacman -Sy --noconfirm $PACKAGES
 }
 
